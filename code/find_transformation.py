@@ -82,9 +82,9 @@ class MatchPointCloud:
         result = o3d.pipelines.registration.registration_icp(
             self.duster_pc_source_,
             target_pc_,
-            max_correspondence_distance=0.05,
+            max_correspondence_distance=0.1,
             estimation_method=o3d.pipelines.registration.TransformationEstimationPointToPoint(),
-            criteria=o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=2000)
+            criteria=o3d.pipelines.registration.ICPConvergenceCriteria(max_iteration=5000)
         )
 
         print(f"Tranformation matrix is :{result.transformation}")
