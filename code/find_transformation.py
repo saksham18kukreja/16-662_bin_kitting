@@ -2,9 +2,7 @@ import open3d as o3d
 import numpy as np
 
 # Base directory for .ply file
-ply_base_dir = "/home/shashwat/Documents/MRSD/Semester_2/16662-RobotAutonomy/Project/16-662_bin_kitting/"
-
-
+ply_base_dir = "../dataset/"
 # Function to load pointcloud from file
 def load_pc(file_path_):
     return o3d.io.read_point_cloud(file_path_)
@@ -24,11 +22,11 @@ def remove_outliers(input_pc_):
 
 
 # Load point-clouds
-duster_pc_source_ = load_pc(ply_base_dir + "duster_gt.ply")
+duster_pc_source_ = load_pc(ply_base_dir + "ground_truth/" + "duster_gt.ply")
 
 
 
-duster_pc_target_= load_pc(ply_base_dir + "duster_val1.ply")
+duster_pc_target_= load_pc(ply_base_dir +  "validation/" + "duster_val1.ply")
 
 
 # Paint point-clouds
