@@ -134,7 +134,7 @@ def main():
     while not rospy.is_shutdown():
         if ros_processor.pc_received_ is True:
             print("PointCloud Received")
-            # pc_matcher.visualize_pc(ros_processor.input_pc_)
+            pc_matcher.visualize_pc(ros_processor.input_pc_)
             # Match point-cloud
             pc_matcher.match_pointcloud(ros_processor.input_pc_)
             
